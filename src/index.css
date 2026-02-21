@@ -358,19 +358,19 @@ body {
   }
 
   #imgfile {
-    @apply w-xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-md absolute top-28 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {
       p {
-        @apply font-bold text-[#5f6266];
+        @apply font-medium text-[#9ca3af] text-xs text-right flex-1;
       }
     }
 
     .preview {
-      @apply p-2 bg-gray-200 max-h-[70vh];
+      @apply p-1;
 
       img {
-        @apply w-full h-fit object-contain object-center;
+        @apply w-full h-auto object-contain object-center rounded-b-lg;
       }
     }
   }
