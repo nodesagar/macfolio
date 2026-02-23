@@ -23,6 +23,8 @@ const Image = () => {
                     <img
                         src={imageUrl}
                         alt={name}
+                        loading="lazy"
+                        decoding="async"
                     />
                     : null}
             </div>
