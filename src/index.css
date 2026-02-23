@@ -287,6 +287,9 @@ body {
 
           &:nth-child(3) {
             @apply row-start-4 row-span-2 col-start-3 col-span-3;
+            img {
+              @apply object-top;
+            }
           }
 
           &:last-child {
@@ -360,16 +363,16 @@ body {
   }
 
   #imgfile {
-    @apply max-w-md absolute top-28 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-[90vw] max-h-[85vh] absolute top-20 right-5 md:top-28 md:right-auto md:left-2/12 sm:max-w-md md:max-w-lg xl:max-w-xl bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {
       p {
-        @apply font-medium text-[#9ca3af] text-xs text-right flex-1;
+        @apply font-medium text-[#9ca3af] text-xs text-right mt-1 md:mt-0 flex-1 truncate;
       }
     }
 
     .preview {
-      @apply p-1;
+      @apply p-1 overflow-y-auto max-h-[80vh];
 
       img {
         @apply w-full h-auto object-contain object-center rounded-b-lg;

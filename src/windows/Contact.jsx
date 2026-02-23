@@ -12,13 +12,15 @@ const Contact = () => {
       </div>
 
       <div className="p-5 space-y-5 ">
-        <img
-          src="/images/landour_sagar_sm.JPG"
-          alt="Sagar"
-          loading="lazy"
-          decoding="async"
-          className="w-40 aspect-square object-cover rounded-full"
-        />
+        <div className="w-40 aspect-square rounded-full overflow-hidden">
+          <img
+            src="/images/me_2.jpg"
+            alt="Sagar"
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover scale-[1.5] object-top"
+          />
+        </div>
 
         <h3>Let's Connect</h3>
         <p>Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
