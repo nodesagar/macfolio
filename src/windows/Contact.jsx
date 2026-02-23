@@ -13,8 +13,10 @@ const Contact = () => {
 
       <div className="p-5 space-y-5 ">
         <img
-          src="/images/landour_ sagar.JPG"
+          src="/images/landour_sagar_sm.JPG"
           alt="Sagar"
+          loading="lazy"
+          decoding="async"
           className="w-40 aspect-square object-cover rounded-full"
         />
 
