@@ -1,5 +1,5 @@
 import WindowControls from '#components/WindowControls.jsx';
-import windowWrapper from '#hoc/windowWrapper.jsx'
+import windowWrapper from '#hoc/WindowWrapper.jsx'
 import { PanelLeft, ChevronLeft, ChevronRight, ShieldHalf, Search, Share, Plus, Copy, ExternalLink } from 'lucide-react';
 import { blogPosts } from '#constants';
 import React from 'react'

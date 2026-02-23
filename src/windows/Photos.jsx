@@ -8,7 +8,7 @@ import { Search, Mail } from "lucide-react";
 const Photos = () => {
   const { openWindow } = useWindowStore();
   return (
-    <>
+    <div className="w-full h-full flex flex-col">
       <div id="window-header">
         <WindowControls target="photos" />
         <div className="w-full flex justify-end items-center gap-3 text-gray-500">
@@ -17,7 +17,7 @@ const Photos = () => {
         </div>
       </div>
 
-      <div className="flex w-full">
+      <div className="flex w-full flex-1 min-h-0">
         <div className="sidebar">
           <h3>Albums</h3>
           <ul>
@@ -52,7 +52,7 @@ const Photos = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

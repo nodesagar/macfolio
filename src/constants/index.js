@@ -106,7 +106,7 @@ const techStack = [
   },
   {
     category: "Mobile",
-    items: ["React Native", "Expo"],
+    items: ["AndriodStudio", "Kotlin", "Flutter", "Dart"],
   },
   {
     category: "Styling",
@@ -114,15 +114,15 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express", " NestJS", "Hono"],
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["MongoDB", "PostgreSQL", "Supabase", "Firebase"],
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Docker", "Postman", "Insomnia", "Figma"],
   },
 ];
 
@@ -132,28 +132,28 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/nodesagar",
   },
   {
     id: 2,
     text: "Platform",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://ocean07.notion.site/Hey-I-m-Sagar-799f047be9494a22bada0d0215681bee",
   },
   {
     id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "https://x.com/nodesagar",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/nodesagar",
   },
 ];
 
@@ -188,19 +188,19 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/google_landscape.jpg",
   },
   {
     id: 2,
-    img: "/images/gal2.png",
+    img: "/images/amazon_visit.jpeg",
   },
   {
     id: 3,
-    img: "/images/gal3.png",
+    img: "/images/microsoft_visit.jpeg",
   },
   {
     id: 4,
-    img: "/images/gal4.png",
+    img: "/images/apple_visit.jpeg",
   },
 ];
 

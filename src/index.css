@@ -236,7 +236,7 @@ body {
   }
 
   #photos {
-    @apply max-w-3xl absolute top-96 left-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-[800px] h-[550px] max-w-[90vw] flex flex-col absolute top-96 left-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     .sidebar {
       @apply w-3/12 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
@@ -265,14 +265,16 @@ body {
     }
 
     .gallery {
-      @apply p-5;
+      @apply relative p-5 flex-1 flex flex-col min-h-0 min-w-0 overflow-hidden;
 
       ul {
-        @apply grid grid-cols-5 grid-rows-5 gap-2.5;
+        @apply flex-1 grid grid-cols-5 grid-rows-5 gap-2.5 min-h-0;
 
         li {
+          @apply relative overflow-hidden rounded-lg;
+
           img {
-            @apply size-full object-cover rounded-lg;
+            @apply absolute inset-0 w-full h-full object-cover;
           }
 
           &:first-child {
