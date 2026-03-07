@@ -15,6 +15,9 @@ const Dock = () => {
         const dock = dockRef.current;
         if (!dock) return;
 
+        // Skip hover animation on mobile
+        if (window.matchMedia('(max-width: 639px)').matches) return;
+
         const icons = dock.querySelectorAll('.dock-icon');
 
         const animateIcon = (mouseX) => {
@@ -74,7 +77,7 @@ const Dock = () => {
 
     const toggleApp = (app) => {
 
-        if(!app.canOpen) return;
+        if (!app.canOpen) return;
 
         const window = windows[app.id];
 
@@ -89,12 +92,12 @@ const Dock = () => {
         } else {
             openWindow(app.id);
         }
-        
+
         console.log(windows);
-     };
+    };
 
 
-    
+
 
     return <section id="dock">
 
@@ -128,7 +131,7 @@ const Dock = () => {
             ))}
 
 
-            <Tooltip id="dock-tooltip" place="top" className="tooltip" />
+            <Tooltip id="dock-tooltip" place="top" className="tooltip max-sm:!hidden" />
 
         </div>
 

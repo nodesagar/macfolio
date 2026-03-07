@@ -38,6 +38,10 @@ const windowWrapper = (Component, windowKey) => {
             const el = ref.current;
             if (!el || !isOpen) return;
 
+            // Only enable Draggable on desktop
+            const isDesktop = window.matchMedia('(min-width: 640px)').matches;
+            if (!isDesktop) return;
+
             const [instance] = Draggable.create(el, {
                 onPress: () =>
                     focusWindow(windowKey)
@@ -62,8 +66,8 @@ const windowWrapper = (Component, windowKey) => {
             id={windowKey}
             ref={ref}
             style={{ zIndex }}
-            className="absolute"
-
+            className="absolute max-sm:!fixed max-sm:!inset-x-0 max-sm:!top-0 max-sm:!w-full max-sm:!h-auto max-sm:!max-h-dvh max-sm:!rounded-none max-sm:!transform-none shadow-2xl drop-shadow-2xl overflow-hidden"
+            onMouseDown={() => focusWindow(windowKey)}
         >
 
             <Component {...props} />

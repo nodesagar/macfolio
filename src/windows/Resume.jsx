@@ -1,7 +1,7 @@
 import WindowControls from "#components/WindowControls.jsx";
 import { Download } from "lucide-react";
 import windowWrapper from "../hoc/WindowWrapper.jsx";
-import React from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -10,6 +10,17 @@ import "react-pdf/dist/Page/TextLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const Resume = () => {
+  const containerRef = useRef(null);
+  const [pageWidth, setPageWidth] = useState(undefined);
+
+  const measureWidth = useCallback(() => {
+    if (containerRef.current && window.matchMedia('(max-width: 639px)').matches) {
+      setPageWidth(containerRef.current.clientWidth);
+    } else {
+      setPageWidth(500);
+    }
+  }, []);
+
   return (
     <>
       <div id="window-header">
@@ -26,9 +37,11 @@ const Resume = () => {
         </a>
       </div>
 
-      <Document file="files/resume.pdf">
-        <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
-      </Document>
+      <div ref={containerRef} className="resume-content">
+        <Document file="files/resume.pdf" onLoadSuccess={measureWidth}>
+          <Page pageNumber={1} width={pageWidth} renderTextLayer renderAnnotationLayer />
+        </Document>
+      </div>
     </>
   );
 };

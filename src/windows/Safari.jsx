@@ -10,24 +10,24 @@ const Safari = () => {
       <div id="window-header">
 
         <WindowControls target="safari" />
-        <PanelLeft className="ml-10 icon" />
+        <PanelLeft className="ml-10 icon max-sm:hidden" />
 
-        <div className="flex items-center gap-1 ml-5">
+        <div className="flex items-center gap-1 ml-5 max-sm:ml-2">
           <ChevronLeft className="icon" />
           <ChevronRight className="icon" />
         </div>
 
 
-        <div className="flex-1 flex-center gap-3">
-          <ShieldHalf className="icon" />
+        <div className="flex-1 flex items-center justify-center gap-3 max-sm:mx-2">
+          <ShieldHalf className="icon max-sm:hidden" />
 
-          <div className="search">
-            <Search className="icon" />
-            <input type="text" placeholder='Search or enter websitename' className='flex-1' />
+          <div className="search max-sm:w-full">
+            <Search className="icon max-sm:hidden" />
+            <input type="text" placeholder='Search or enter websitename' className='flex-1 w-full' />
           </div>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 max-sm:hidden">
           <Share className="icon" />
           <Plus className="icon" />
           <Copy className="icon" />
@@ -48,7 +48,7 @@ const Safari = () => {
                 <p>{date}</p>
                 <h3>{title}</h3>
                 <a href={link} target="_blank" rel="noopener noreferrer">
-                  Read More <ExternalLink size={14} className='icon-hover'/>
+                  Read More <ExternalLink size={14} className='icon-hover' />
                 </a>
               </div>
             </div>

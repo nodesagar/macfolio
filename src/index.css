@@ -3,7 +3,8 @@
 
 html,
 body {
-  width: 100dvw;
+  width: 100%;
+  max-width: 100dvw;
   overflow: hidden;
   height: 100dvh;
   background-image: url("/images/wallpaper.png");
@@ -32,15 +33,19 @@ body {
 
 @layer base {
   main {
-    @apply w-dvw h-dvh overflow-hidden;
+    @apply w-full h-dvh overflow-hidden;
   }
 
   nav {
     @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
 
     div {
-      @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
+      @apply flex items-center gap-5;
 
+      &:first-child {
+        @apply max-sm:w-full max-sm:justify-center;
+      }
+      
       &:last-child {
         @apply max-sm:hidden;
       }
@@ -66,7 +71,7 @@ body {
   }
 
   #welcome {
-    @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
+    @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:w-[90%] max-sm:text-center;
 
     .small-screen {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
@@ -78,10 +83,10 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
+    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-[1000] select-none max-sm:bottom-2 max-sm:w-[95%] max-sm:overflow-x-auto;
 
     .dock-container {
-      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5 max-sm:w-full max-sm:justify-around max-sm:px-4;
     }
 
     .tooltip {
@@ -89,7 +94,7 @@ body {
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-14 max-sm:size-10 3xl:size-20 cursor-pointer;
 
       img {
         @apply object-cover object-center;
@@ -136,10 +141,10 @@ body {
       }
 
       .blog-post {
-        @apply grid grid-cols-12 space-x-5;
+        @apply grid grid-cols-12 space-x-5 max-sm:flex max-sm:flex-col max-sm:space-x-0 max-sm:gap-4 max-sm:mb-8;
 
         img {
-          @apply size-full rounded-md object-cover;
+          @apply size-full rounded-md object-cover max-sm:h-48;
         }
 
         .content {
@@ -162,7 +167,7 @@ body {
   }
 
   #terminal {
-    @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-xl w-full absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-y-auto overflow-x-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
@@ -208,7 +213,7 @@ body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-2xl w-full max-sm:w-full absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-y-auto overflow-x-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
@@ -219,7 +224,7 @@ body {
     }
 
     ul {
-      @apply flex items-center gap-3;
+      @apply flex items-center gap-3 max-sm:flex-wrap max-sm:justify-center;
 
       li {
         @apply rounded-lg p-3 w-60 hover:-translate-y-0.5 hover:scale-105 origin-center transition-all duration-300;
@@ -239,15 +244,17 @@ body {
     @apply w-[800px] h-[550px] max-w-[90vw] flex flex-col absolute top-96 left-1/2 -translate-y-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     .sidebar {
-      @apply w-3/12 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
+      @apply w-3/12 max-sm:w-full max-sm:h-auto max-sm:border-r-0 max-sm:border-b max-sm:p-3 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5;
 
       h2 {
-        @apply text-xs font-medium text-gray-400 mb-1;
+        @apply text-xs font-medium text-gray-400 mb-1 max-sm:hidden;
       }
 
       ul {
+        @apply max-sm:flex max-sm:justify-between max-sm:overflow-x-auto max-sm:gap-2;
+        
         li {
-          @apply flex space-y-1 items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+          @apply flex space-y-1 items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors max-sm:flex-col max-sm:px-2 max-sm:py-1;
 
           &:first-child {
             @apply bg-blue-100 text-blue-700;
@@ -265,10 +272,10 @@ body {
     }
 
     .gallery {
-      @apply relative p-5 flex-1 flex flex-col min-h-0 min-w-0 overflow-hidden;
+      @apply relative p-5 max-sm:p-2 flex-1 flex flex-col min-h-0 min-w-0 overflow-y-auto;
 
       ul {
-        @apply flex-1 grid grid-cols-5 grid-rows-5 gap-2.5 min-h-0;
+        @apply flex-1 grid grid-cols-5 grid-rows-5 max-sm:flex max-sm:flex-col gap-2.5 min-h-0;
 
         li {
           @apply relative overflow-hidden rounded-lg;
@@ -301,20 +308,24 @@ body {
   }
 
   #resume {
-    @apply w-fit h-fit absolute top-16 left-7/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-fit h-fit max-h-[85vh] absolute top-16 left-7/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden max-sm:!w-full;
 
     #window-header {
       h2 {
         @apply font-bold text-sm text-center flex-1;
       }
     }
+
+    .resume-content {
+      @apply w-full overflow-y-auto max-h-[calc(85vh-50px)] max-sm:max-h-[calc(100dvh-50px)];
+    }
   }
 
   #finder {
-    @apply absolute w-3xl left-40 top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
+    @apply absolute max-w-3xl w-full left-40 top-20 shadow-2xl drop-shadow-2xl overflow-y-auto overflow-x-hidden rounded-xl max-sm:flex-col max-sm:flex max-sm:left-0 max-sm:top-0;
 
     .sidebar {
-      @apply w-48 bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
+      @apply w-48 max-sm:w-full max-sm:border-r-0 max-sm:border-b bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
 
       h3 {
         @apply text-xs font-medium text-gray-400 mb-1;
@@ -332,30 +343,30 @@ body {
         }
 
         li {
-          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+          @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors max-sm:shrink-0;
         }
       }
     }
 
     .content {
-      @apply flex-1 p-8 bg-white max-w-2xl relative;
+      @apply flex-1 p-8 bg-white max-w-2xl relative max-sm:flex max-sm:flex-col max-sm:gap-4 max-sm:p-4;
 
       li {
-        @apply absolute flex items-center flex-col gap-3;
+        @apply absolute flex items-center flex-col gap-3 max-sm:!static max-sm:!transform-none max-sm:flex-row max-sm:gap-3;
 
         img {
-          @apply object-contain object-center size-16 relative group-hover:scale-105;
+          @apply object-contain object-center size-16 relative group-hover:scale-105 max-sm:size-10;
         }
 
         p {
-          @apply text-sm text-center font-medium w-40;
+          @apply text-sm text-center font-medium w-40 max-sm:w-auto max-sm:text-left;
         }
       }
     }
   }
 
   #txtfile {
-    @apply w-md max-w-[90vw] max-h-[80vh] flex flex-col absolute top-20 right-5 md:top-36 md:right-32 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-md w-full max-sm:w-full max-h-[80vh] max-sm:max-h-full flex flex-col absolute top-20 right-5 md:top-36 md:right-32 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-y-auto overflow-x-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
@@ -363,7 +374,7 @@ body {
   }
 
   #imgfile {
-    @apply max-w-[90vw] max-h-[85vh] absolute top-20 right-5 md:top-28 md:right-auto md:left-2/12 sm:max-w-md md:max-w-lg xl:max-w-xl bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply max-w-[90vw] max-sm:max-w-full w-full max-h-[85vh] max-sm:max-h-dvh flex flex-col absolute top-20 right-5 md:top-28 md:right-auto md:left-2/12 sm:max-w-md md:max-w-lg xl:max-w-xl bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {
       p {
@@ -372,7 +383,7 @@ body {
     }
 
     .preview {
-      @apply p-1 overflow-y-auto max-h-[80vh];
+      @apply p-1 flex-1 min-h-0 flex justify-center items-start overflow-y-auto;
 
       img {
         @apply w-full h-auto object-contain object-center rounded-b-lg;
@@ -381,18 +392,20 @@ body {
   }
 
   #home {
-    @apply relative z-0 max-sm:hidden;
+    @apply relative z-0 w-full h-[calc(100vh-100px)] pointer-events-none;
 
     ul {
+      @apply max-sm:grid max-sm:grid-cols-4 max-sm:gap-4 max-sm:p-4;
+
       li {
-        @apply absolute z-0 select-none flex items-center flex-col;
+        @apply absolute max-sm:!static max-sm:!transform-none select-none flex items-center flex-col max-sm:col-span-1 max-sm:w-full max-sm:h-24 justify-start pointer-events-auto;
 
         img {
-          @apply group-hover:bg-gray-950/10 p-1 rounded-md;
+          @apply group-hover:bg-gray-950/10 p-1 rounded-md max-sm:w-14 max-sm:h-14;
         }
 
         p {
-          @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
+          @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors w-full mt-1 line-clamp-2 leading-tight;
         }
       }
     }

@@ -49,7 +49,7 @@ const Finder = () => {
         <Search className="icon" />
       </div>
 
-      <div className="bg-white flex h-full">
+      <div className="bg-white flex max-sm:flex-col h-full">
         <div className="sidebar">
           {renderList("Favorites", Object.values(locations))}
           {renderList("My Projects", locations.work.children)}
@@ -61,7 +61,7 @@ const Finder = () => {
               <li
                 key={item.id}
                 className={item.position}
-                onClick={() => openItem(item)}
+                onClick={(e) => { e.stopPropagation(); openItem(item); }}
               >
                 <img src={item.icon} alt={item.name} />
                 <p>{item.name}</p>
