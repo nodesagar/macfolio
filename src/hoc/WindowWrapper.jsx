@@ -62,11 +62,19 @@ const windowWrapper = (Component, windowKey) => {
 
         if (!isOpen) return null;
 
+        const mobileOverflowClass = ["finder", "contact", "terminal", "safari"].includes(windowKey)
+            ? "max-sm:!overflow-hidden"
+            : "max-sm:!overflow-y-auto max-sm:!overflow-x-hidden";
+
+        const mobileLayoutClass = ["finder", "contact", "terminal", "safari"].includes(windowKey)
+            ? "max-sm:!inset-x-0 max-sm:!top-0 max-sm:!bottom-auto max-sm:!w-full max-sm:!h-auto max-sm:!max-h-[calc(100dvh-6rem)]"
+            : "max-sm:!inset-x-0 max-sm:!top-0 max-sm:!bottom-24 max-sm:!w-full max-sm:!h-auto max-sm:!max-h-none";
+
         return (<section
             id={windowKey}
             ref={ref}
             style={{ zIndex }}
-            className="absolute max-sm:!fixed max-sm:!inset-x-0 max-sm:!top-0 max-sm:!w-full max-sm:!h-auto max-sm:!max-h-dvh max-sm:!rounded-none max-sm:!transform-none shadow-2xl drop-shadow-2xl overflow-hidden"
+            className={`absolute max-sm:!fixed ${mobileLayoutClass} max-sm:!rounded-none max-sm:!transform-none shadow-2xl drop-shadow-2xl overflow-hidden ${mobileOverflowClass}`}
             onMouseDown={() => focusWindow(windowKey)}
         >
 
