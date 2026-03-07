@@ -4,6 +4,11 @@ import windowWrapper from "../hoc/WindowWrapper.jsx";
 import { socials } from "#constants";
 
 const Contact = () => {
+  const socialOrder = ["Github", "LinkedIn", "Instagram", "Twitter/X"];
+  const orderedSocials = [...socials].sort(
+    (a, b) => socialOrder.indexOf(a.text) - socialOrder.indexOf(b.text)
+  );
+
   return (
     <>
       <div id="window-header">
@@ -11,8 +16,8 @@ const Contact = () => {
         <h2>Contact Me</h2>
       </div>
 
-      <div className="p-5 space-y-5 ">
-        <div className="w-40 aspect-square rounded-full overflow-hidden">
+      <div className="contact-content">
+        <div className="profile-pic">
           <img
             src="/images/me_2.jpg"
             alt="Sagar"
@@ -23,12 +28,12 @@ const Contact = () => {
         </div>
 
         <h3>Let's Connect</h3>
-        <p>Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
-        <p>conveytosagar@gmail.com</p>
+        <p className="intro-copy">Got an idea? A bug to squash? Or just wanna talk tech? I'm in.</p>
+        <p className="email">conveytosagar@gmail.com</p>
 
-        <ul>
-          {socials.map(({ id, bg, link, icon, text }) => (
-            <li key={id} style={{ backgroundColor: bg }}>
+        <ul className="social-grid">
+          {orderedSocials.map(({ id, bg, link, icon, text }) => (
+            <li key={id} style={{ background: bg }} className="social-card">
               <a
                 href={link}
                 target="_blank"

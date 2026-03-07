@@ -130,28 +130,28 @@ const socials = [
     id: 1,
     text: "Github",
     icon: "/icons/github.svg",
-    bg: "#f4656b",
+    bg: "linear-gradient(135deg, #24292f 0%, #2ea043 100%)",
     link: "https://github.com/nodesagar",
   },
   {
     id: 2,
     text: "Instagram",
     icon: "/icons/instagram.svg",
-    bg: "#4bcb63",
+    bg: "linear-gradient(135deg, #f58529 0%, #dd2a7b 35%, #8134af 65%, #515bd4 100%)",
     link: "https://www.instagram.com/nodesagar/",
   },
   {
     id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
-    bg: "#ff866b",
+    bg: "#000000",
     link: "https://x.com/nodesagar",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
-    bg: "#05b6f6",
+    bg: "#0a66c2",
     link: "https://www.linkedin.com/in/nodesagar",
   },
 ];
@@ -161,45 +161,58 @@ const photosLinks = [
     id: 1,
     icon: "/icons/gicon1.svg",
     title: "Library",
+    album: "library",
   },
   {
     id: 2,
     icon: "/icons/gicon2.svg",
     title: "Memories",
+    album: "memories",
   },
   {
     id: 3,
     icon: "/icons/file.svg",
     title: "Places",
+    album: "places",
   },
   {
     id: 4,
     icon: "/icons/gicon4.svg",
     title: "People",
+    album: "people",
   },
   {
     id: 5,
     icon: "/icons/gicon5.svg",
     title: "Favorites",
+    album: "favorites",
   },
 ];
 
 const gallery = [
   {
     id: 1,
+    name: "Google Campus View",
     img: "/images/google_landscape.jpg",
+    albums: ["library", "places", "favorites"],
   },
   {
     id: 2,
+    name: "Amazon Visit",
     img: "/images/amazon_visit.jpeg",
+    albums: ["library", "memories", "people"],
   },
   {
     id: 3,
+    name: "Microsoft Visit",
     img: "/images/microsoft_2_sm.jpg",
+    albums: ["library", "memories", "people", "favorites"],
   },
   {
     id: 4,
+    name: "Apple Visit",
     img: "/images/apple_visit.jpeg",
+    albums: ["library", "memories", "people", "places"],
   },
 ];
 
