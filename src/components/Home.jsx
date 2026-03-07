@@ -20,7 +20,9 @@ const Home = () => {
     };
 
     useGSAP(() => {
-        Draggable.create(".folder");
+        if (window.matchMedia('(min-width: 640px)').matches) {
+            Draggable.create(".folder");
+        }
     }, []);
 
     return (

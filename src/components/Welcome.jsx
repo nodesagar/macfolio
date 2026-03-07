@@ -22,6 +22,9 @@ const renderText = (text, className, baseWeight = 400) => {
 const setupTextHover = (container, type) => {
   if (!container) return () => { };
 
+  // Skip hover effect on mobile/touch devices
+  if (window.matchMedia('(max-width: 639px)').matches) return () => { };
+
   const letters = container.querySelectorAll('span');
 
   const { min, max, default: base } = FONT_WEIGHTS[type];
@@ -92,13 +95,13 @@ const Welcome = () => {
 
       {renderText(
         "Hey I'm Sagar. Welcome to my",
-        "text-2xl sm:text-3xl font-georama px-4 text-center",
+        "text-2xl sm:text-3xl font-georama",
         100,
       )}
 
     </p>
 
-    <h1 ref={titleRef} className='mt-7 px-4 text-center'>
+    <h1 ref={titleRef} className='mt-7'>
 
 
       {renderText("portfolio", "text-6xl sm:text-9xl italic font-georama")} </h1>

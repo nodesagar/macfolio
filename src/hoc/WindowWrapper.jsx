@@ -66,8 +66,8 @@ const windowWrapper = (Component, windowKey) => {
             id={windowKey}
             ref={ref}
             style={{ zIndex }}
-            className="absolute max-sm:!fixed max-sm:!inset-0 max-sm:!w-full max-sm:!h-full max-sm:!rounded-none max-sm:!z-[9999] max-sm:!transform-none shadow-2xl drop-shadow-2xl overflow-hidden"
-            onClick={() => focusWindow(windowKey)}
+            className="absolute max-sm:!fixed max-sm:!inset-x-0 max-sm:!top-0 max-sm:!w-full max-sm:!h-auto max-sm:!max-h-dvh max-sm:!rounded-none max-sm:!transform-none shadow-2xl drop-shadow-2xl overflow-hidden"
+            onMouseDown={() => focusWindow(windowKey)}
         >
 
             <Component {...props} />
