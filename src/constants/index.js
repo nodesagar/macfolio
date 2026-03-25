@@ -285,6 +285,16 @@ const WORK_LOCATION = {
         // },
       ],
     },
+    // ▶ Project 2
+    {
+      id: 8,
+      name: "ParseCal",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 left-80",
+      windowPosition: "top-[20vh] left-5",
+      children: [],
+    },
 
     // // ▶ Project 2
     // {
