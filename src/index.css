@@ -86,7 +86,9 @@ body {
     @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-[1000] select-none max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:translate-x-0 max-sm:z-[9999] max-sm:w-full max-sm:px-2 max-sm:pt-2 max-sm:pb-2 max-sm:overflow-x-auto;
 
     .dock-container {
-      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5 max-sm:w-fit max-sm:mx-auto max-sm:justify-center max-sm:px-3 max-sm:py-2 max-sm:bg-[#6b72cc]/45 max-sm:backdrop-blur-2xl max-sm:border max-sm:border-white/25 max-sm:shadow-[0_10px_30px_rgba(20,26,57,0.35)];
+      @apply bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] justify-between rounded-2xl p-1.5 flex items-end gap-1.5 
+             max-sm:w-fit max-sm:mx-auto max-sm:justify-center max-sm:px-3 max-sm:py-2 
+             max-sm:bg-white/15 max-sm:backdrop-blur-[20px] max-sm:border-white/30;
     }
 
     .tooltip {
