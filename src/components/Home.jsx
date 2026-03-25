@@ -6,9 +6,9 @@ import { Draggable } from "gsap/Draggable";
 import useWindowStore from "#store/window";
 import useLocationStore from "../store/location.js";
 
-const projects = locations.work.children ?? [];
-
 const Home = () => {
+    const projects = locations.work.children ?? [];
+
 
     const { setActiveLocation } = useLocationStore();
     const { openWindow } = useWindowStore();
@@ -23,7 +23,7 @@ const Home = () => {
         if (window.matchMedia('(min-width: 640px)').matches) {
             Draggable.create(".folder");
         }
-    }, []);
+    }, [projects]);
 
     return (
         <section id="home">
