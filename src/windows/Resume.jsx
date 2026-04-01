@@ -28,7 +28,7 @@ const Resume = () => {
         <h2>Resume.pdf</h2>
 
         <a
-          href="files/resume.pdf"
+          href="files/sagar_prasad_resume.pdf"
           download
           className="cursor-pointer"
           title="Download resume"
@@ -38,7 +38,7 @@ const Resume = () => {
       </div>
 
       <div ref={containerRef} className="resume-content">
-        <Document file="files/resume.pdf" onLoadSuccess={measureWidth}>
+        <Document file="files/sagar_prasad_resume.pdf" onLoadSuccess={measureWidth}>
           <Page pageNumber={1} width={pageWidth} renderTextLayer renderAnnotationLayer />
         </Document>
       </div>
