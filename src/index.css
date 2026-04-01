@@ -398,7 +398,7 @@ body {
   }
 
   #resume {
-    @apply w-fit h-fit max-h-[85vh] absolute top-16 left-7/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden max-sm:!w-full;
+    @apply w-fit h-fit max-h-[85vh] absolute top-16 left-1/2 -translate-x-1/2 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden max-sm:!w-full;
 
     #window-header {
       h2 {
