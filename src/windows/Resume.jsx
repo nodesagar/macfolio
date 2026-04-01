@@ -1,5 +1,5 @@
 import WindowControls from "#components/WindowControls.jsx";
-import { Download, ZoomIn, ZoomOut } from "lucide-react";
+import { Download, ZoomIn, ZoomOut, Loader2 } from "lucide-react";
 import windowWrapper from "../hoc/WindowWrapper.jsx";
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -7,7 +7,10 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 const Resume = () => {
   const containerRef = useRef(null);
@@ -75,9 +78,28 @@ const Resume = () => {
       </div>
 
       <div ref={containerRef} className="resume-content overflow-x-auto relative z-0">
-        <div className="w-fit mx-auto">
-          <Document file="files/sagar_prasad_resume.pdf" onLoadSuccess={measureWidth}>
-            <Page pageNumber={1} width={pageWidth} scale={scale} renderTextLayer renderAnnotationLayer />
+        <div className="w-fit mx-auto min-h-[500px]">
+          <Document 
+            file="files/sagar_prasad_resume.pdf" 
+            onLoadSuccess={measureWidth}
+            loading={
+              <div className="flex items-center justify-center h-[500px] w-full min-w-[300px]">
+                <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
+              </div>
+            }
+          >
+            <Page 
+              pageNumber={1} 
+              width={pageWidth} 
+              scale={scale} 
+              renderTextLayer 
+              renderAnnotationLayer 
+              loading={
+                <div className="flex items-center justify-center h-[500px] w-full min-w-[300px]">
+                  <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
+                </div>
+              }
+            />
           </Document>
         </div>
       </div>
