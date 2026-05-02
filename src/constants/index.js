@@ -292,7 +292,7 @@ const WORK_LOCATION = {
       name: "ParseCal",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-5 left-80",
+      position: "top-10 left-56",
       windowPosition: "top-[5vh] left-5",
       children: [
         {
@@ -334,7 +334,7 @@ const WORK_LOCATION = {
       name: "Intab",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-32 left-5",
+      position: "top-10 left-[28rem]",
       windowPosition: "top-[18vh] left-5",
       children: [
         {
@@ -375,7 +375,7 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-10 left-5",
+      position: "top-10 left-10",
       imageUrl: "/images/me_2.jpg",
     },
     {
@@ -384,7 +384,7 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-28 right-72",
+      position: "top-10 left-[15rem]",
       imageUrl: "/images/landour_sagar_md.JPG",
     },
     {
@@ -393,7 +393,7 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-40 left-90",
+      position: "top-40 left-10",
       imageUrl: "/images/apple_visit.jpeg",
     },
     {
@@ -402,7 +402,7 @@ const ABOUT_LOCATION = {
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-12 left-65",
+      position: "top-40 left-[15rem]",
       subtitle: "Meet the Developer Behind the Code",
       image: "/images/me_badhraj_temple.jpg",
       description: [
