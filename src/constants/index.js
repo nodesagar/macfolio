@@ -240,6 +240,7 @@ const WORK_LOCATION = {
       name: "Build3X Cohort Website",
       icon: "/images/folder.png",
       kind: "folder",
+      hideFromDesktop: true,
       position: "top-10 left-5", // icon position inside Finder
       windowPosition: "top-[5vh] left-5", // optional: Finder window position
       children: [
@@ -291,8 +292,8 @@ const WORK_LOCATION = {
       name: "ParseCal",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-80",
-      windowPosition: "top-[20vh] left-5",
+      position: "top-5 left-80",
+      windowPosition: "top-[5vh] left-5",
       children: [
         {
           id: 1,
@@ -324,6 +325,37 @@ const WORK_LOCATION = {
           fileType: "img",
           position: "top-44 left-56",
           imageUrl: "/images/parsecal_ui.png",
+        },
+      ],
+    },
+    // ▶ Project 3
+    {
+      id: 9,
+      name: "Intab",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-32 left-5",
+      windowPosition: "top-[18vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "Intab Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            "Intab is a new project.",
+          ],
+        },
+        {
+          id: 2,
+          name: "intab",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://intab.vercel.app/",
+          position: "top-20 right-32",
         },
       ],
     },

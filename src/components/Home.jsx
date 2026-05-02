@@ -7,7 +7,7 @@ import useWindowStore from "#store/window";
 import useLocationStore from "../store/location.js";
 
 const Home = () => {
-    const projects = locations.work.children ?? [];
+    const projects = (locations.work.children ?? []).filter((p) => !p.hideFromDesktop);
 
 
     const { setActiveLocation } = useLocationStore();
