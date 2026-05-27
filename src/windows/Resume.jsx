@@ -67,7 +67,7 @@ const Resume = () => {
           <div className="w-[1px] h-5 bg-gray-300 mx-1"></div>
 
           <a
-            href="files/sagar_prasad_resume.pdf"
+            href="/files/Sagar_Prasad_Resume.pdf"
             download
             className="cursor-pointer flex items-center justify-center"
             title="Download resume"
@@ -80,7 +80,7 @@ const Resume = () => {
       <div ref={containerRef} className="resume-content overflow-x-auto relative z-0">
         <div className="w-fit mx-auto min-h-[500px]">
           <Document 
-            file="files/sagar_prasad_resume.pdf" 
+            file="/files/Sagar_Prasad_Resume.pdf" 
             onLoadSuccess={measureWidth}
             loading={
               <div className="flex items-center justify-center h-[500px] w-full min-w-[300px]">
