@@ -240,6 +240,7 @@ const WORK_LOCATION = {
       name: "Build3X Cohort Website",
       icon: "/images/folder.png",
       kind: "folder",
+      category: "freelance",
       hideFromDesktop: true,
       position: "top-10 left-5", // icon position inside Finder
       windowPosition: "top-[5vh] left-5", // optional: Finder window position
@@ -359,8 +360,69 @@ const WORK_LOCATION = {
         },
       ],
     },
+    // ▶ Project 4
+    {
+      id: 10,
+      name: "ownURgrowth",
+      icon: "/images/folder.png",
+      kind: "folder",
+      category: "freelance",
+      position: "top-10 left-[42rem]",
+      windowPosition: "top-[31vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "ownURgrowth Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            "ownURgrowth is an online learning platform focused on LinkedIn personal branding and professional growth, offering paid video courses, a curated Prompt Vault, ghostwriting and brand-partnership services, and live Q&A sessions.",
+            [
+              "I built this as a freelance engagement for ",
+              {
+                text: "Ashwini Harle",
+                href: "https://www.linkedin.com/in/ashwini-harle",
+              },
+              " — SDE 2 at Amazon and a Top 1% career coach on Topmate — who founded ownURgrowth to help people grow their careers and personal brand.",
+            ],
+            "I led the full migration of the platform from Firebase to Supabase, re-architecting authentication, course access, and payment history on PostgreSQL while keeping the live product running.",
+            "My work centered on security and reliability: hardening auth-sensitive API flows, securing course video embeds, building branded Google sign-in via GIS id-token + nonce, gating admin endpoints, refining checkout and receipt emails, and optimizing performance for smooth scrolling.",
+          ],
+        },
+        {
+          id: 2,
+          name: "ownurgrowth",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://ownurgrowth.com",
+          position: "top-20 right-32",
+        },
+        {
+          id: 3,
+          name: "ownurgrowth.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-44 left-56",
+          imageUrl: "/images/ownurgrowth_home.png",
+        },
+      ],
+    },
   ],
 };
+
+// Sidebar groupings derived from the Work folder's projects.
+const myProjects = WORK_LOCATION.children.filter(
+  (p) => p.category !== "freelance",
+);
+const freelanceProjects = WORK_LOCATION.children.filter(
+  (p) => p.category === "freelance",
+);
+
+export { myProjects, freelanceProjects };
 
 const ABOUT_LOCATION = {
   id: 2,

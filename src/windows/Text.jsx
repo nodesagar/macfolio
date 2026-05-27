@@ -48,7 +48,23 @@ const Text = () => {
                     <div className="space-y-3 leading-relaxed textbase text-gray-800">
                         {description.map((para, idx) => (
                             <p key={idx}>
-                                {para}
+                                {Array.isArray(para)
+                                    ? para.map((seg, i) =>
+                                          typeof seg === "string" ? (
+                                              seg
+                                          ) : (
+                                              <a
+                                                  key={i}
+                                                  href={seg.href}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="text-blue-600 font-medium hover:underline"
+                                              >
+                                                  {seg.text}
+                                              </a>
+                                          ),
+                                      )
+                                    : para}
                             </p>
                         ))}
 
