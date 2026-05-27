@@ -2,7 +2,7 @@ import React from "react";
 import WindowControls from "#components/WindowControls.jsx";
 import { Search } from "lucide-react";
 import windowWrapper from "../hoc/WindowWrapper.jsx";
-import { locations } from "#constants";
+import { locations, myProjects, freelanceProjects } from "#constants";
 import useLocationStore from "../store/location.js";
 import clsx from "clsx";
 import useWindowStore from "#store/window.js";
@@ -52,7 +52,8 @@ const Finder = () => {
       <div className="bg-white flex max-sm:flex-col h-full">
         <div className="sidebar">
           {renderList("Favorites", Object.values(locations))}
-          {renderList("My Projects", locations.work.children)}
+          {renderList("My Projects", myProjects)}
+          {renderList("Freelance", freelanceProjects)}
         </div>
 
         <ul className="content">
