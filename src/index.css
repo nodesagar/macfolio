@@ -488,7 +488,7 @@ body {
       @apply max-sm:grid max-sm:grid-cols-4 max-sm:gap-4 max-sm:p-4;
 
       li {
-        @apply absolute max-sm:!static max-sm:!transform-none select-none flex items-center flex-col max-sm:col-span-1 max-sm:w-full max-sm:h-24 justify-start pointer-events-auto;
+        @apply absolute max-sm:!static max-sm:!transform-none select-none flex items-center flex-col sm:w-24 max-sm:col-span-1 max-sm:w-full max-sm:h-24 justify-start pointer-events-auto;
 
         img {
           @apply group-hover:bg-gray-950/10 p-1 rounded-md max-sm:w-14 max-sm:h-14;
