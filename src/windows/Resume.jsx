@@ -3,14 +3,12 @@ import { Download, ZoomIn, ZoomOut, Loader2 } from "lucide-react";
 import windowWrapper from "../hoc/WindowWrapper.jsx";
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import pdfWorkerSrc from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerSrc;
 
 const Resume = () => {
   const containerRef = useRef(null);
