@@ -13,7 +13,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerSrc;
 const Resume = () => {
   const containerRef = useRef(null);
   const [pageWidth, setPageWidth] = useState(undefined);
-  const [scale, setScale] = useState(2);
+  const [scale, setScale] = useState(() =>
+    window.matchMedia('(max-width: 639px)').matches ? 1 : 2
+  );
 
   const measureWidth = useCallback(() => {
     if (containerRef.current && window.matchMedia('(max-width: 639px)').matches) {
@@ -29,14 +31,14 @@ const Resume = () => {
   useEffect(() => {
     const handleResize = () => {
       measureWidth();
-      setScale(2); // Reset zoom when crossing device boundaries or resizing
+      setScale(window.matchMedia('(max-width: 639px)').matches ? 1 : 2);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [measureWidth]);
 
   return (
-    <>
+    <div className="w-full h-full flex flex-col overflow-hidden">
       <div id="window-header" className="relative z-50">
         <WindowControls target="resume" />
         <h2>Resume.pdf</h2>
@@ -75,7 +77,7 @@ const Resume = () => {
         </div>
       </div>
 
-      <div ref={containerRef} className="resume-content overflow-x-auto relative z-0">
+      <div ref={containerRef} className="resume-content flex-1 overflow-y-auto overflow-x-auto relative z-0">
         <div className="w-fit mx-auto min-h-[500px]">
           <Document 
             file="/files/Sagar_Prasad_Resume.pdf" 
@@ -101,7 +103,7 @@ const Resume = () => {
           </Document>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

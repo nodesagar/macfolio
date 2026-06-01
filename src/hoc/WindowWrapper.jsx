@@ -62,11 +62,13 @@ const windowWrapper = (Component, windowKey) => {
 
         if (!isOpen) return null;
 
-        const mobileOverflowClass = ["finder", "contact", "terminal", "safari"].includes(windowKey)
+        const mobileOverflowClass = ["finder", "contact", "terminal", "safari", "resume"].includes(windowKey)
             ? "max-sm:!overflow-hidden"
             : "max-sm:!overflow-y-auto max-sm:!overflow-x-hidden";
 
-        const mobileLayoutClass = ["finder", "contact", "terminal", "safari"].includes(windowKey)
+        const mobileLayoutClass = ["finder", "safari", "resume"].includes(windowKey)
+            ? "max-sm:!inset-x-0 max-sm:!top-0 max-sm:!bottom-auto max-sm:!w-full max-sm:!h-[calc(100dvh-6rem)]"
+            : ["contact", "terminal"].includes(windowKey)
             ? "max-sm:!inset-x-0 max-sm:!top-0 max-sm:!bottom-auto max-sm:!w-full max-sm:!h-auto max-sm:!max-h-[calc(100dvh-6rem)]"
             : "max-sm:!inset-x-0 max-sm:!top-0 max-sm:!bottom-24 max-sm:!w-full max-sm:!h-auto max-sm:!max-h-none";
 

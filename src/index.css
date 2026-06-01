@@ -407,7 +407,7 @@ body {
     }
 
     .resume-content {
-      @apply w-full overflow-y-auto max-h-[calc(85vh-50px)] max-sm:max-h-[calc(100dvh-50px)];
+      @apply w-full overflow-y-auto max-h-[calc(85vh-50px)] max-sm:max-h-none;
     }
   }
 
@@ -415,7 +415,7 @@ body {
     @apply absolute w-[1080px] h-[84vh] max-w-[94vw] max-h-[860px] left-18 top-10 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl max-sm:flex-col max-sm:flex max-sm:left-0 max-sm:top-0 max-sm:w-full max-sm:h-auto max-sm:max-w-none max-sm:max-h-[calc(100dvh-6rem)] max-sm:rounded-none;
 
     .sidebar {
-      @apply w-48 max-sm:w-full max-sm:border-r-0 max-sm:border-b bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
+      @apply w-48 max-sm:w-full max-sm:border-r-0 max-sm:border-b bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3 max-sm:max-h-48 max-sm:overflow-y-auto max-sm:shrink-0;
 
       h3 {
         @apply text-xs font-medium text-gray-400 mb-1;
@@ -439,7 +439,7 @@ body {
     }
 
     .content {
-      @apply flex-1 p-8 bg-white w-full relative overflow-hidden max-sm:flex max-sm:flex-col max-sm:gap-4 max-sm:p-4;
+      @apply flex-1 p-8 bg-white w-full relative overflow-hidden max-sm:flex max-sm:flex-col max-sm:gap-4 max-sm:p-4 max-sm:overflow-y-auto;
 
       li {
         @apply absolute flex items-center flex-col gap-3 max-sm:!static max-sm:!transform-none max-sm:flex-row max-sm:gap-3;
