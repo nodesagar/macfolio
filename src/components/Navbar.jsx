@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import { navIcons, navLinks } from '#constants/index.js';
 import React from 'react'
 import useWindowStore from '#store/window.js';
+import CatGuide from '#components/CatGuide.jsx';
 
 
 
@@ -34,6 +35,8 @@ const Navbar = () => {
 
 
         <div>
+
+            <CatGuide />
 
             <ul>
                 {navIcons.map(({ id, img }) => (
