@@ -95,36 +95,38 @@ const CatGuide = () => {
 
       {open && createPortal(
         <div
-          className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/40 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/40 backdrop-blur-sm p-3 sm:p-4"
           onClick={(e) => e.target === e.currentTarget && setOpen(false)}
         >
-          <div className="relative w-full max-w-md rounded-2xl bg-white/80 backdrop-blur-2xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-6 max-h-[85vh] overflow-y-auto">
+          <div className="relative flex flex-col w-full max-w-sm sm:max-w-md max-h-[85dvh] rounded-2xl bg-white/85 backdrop-blur-2xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-4 sm:p-5">
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 flex items-center justify-center size-8 rounded-lg text-gray-600 hover:bg-black/10 transition-colors cursor-pointer"
+              className="absolute top-3 right-3 flex items-center justify-center size-7 rounded-lg text-gray-600 hover:bg-black/10 transition-colors cursor-pointer"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
 
-            <div className="flex items-center gap-2.5 mb-1">
-              <Cat size={22} className="text-black" />
-              <h2 className="text-lg font-bold text-black">Say hi to the cat 🐾</h2>
+            <div className="shrink-0 pr-8">
+              <div className="flex items-center gap-2">
+                <Cat size={20} className="text-black" />
+                <h2 className="text-base sm:text-lg font-bold text-black">Say hi to the cat 🐾</h2>
+              </div>
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                A tiny pixel pet roams this site. Here's what it can do.
+              </p>
             </div>
-            <p className="text-sm text-gray-600 mb-5">
-              There's a tiny pixel pet roaming this site. Here's everything it can do.
-            </p>
 
-            <ul className="flex flex-col gap-3.5">
+            <ul className="flex flex-col gap-2.5 mt-3 min-h-0 flex-1 overflow-y-auto">
               {tips.map((tip) => (
-                <li key={tip.title} className="flex gap-3">
-                  <span className="flex items-center justify-center size-9 shrink-0 rounded-lg bg-black/5 text-black">
-                    <tip.Icon size={18} />
+                <li key={tip.title} className="flex gap-2.5">
+                  <span className="flex items-center justify-center size-8 shrink-0 rounded-lg bg-black/5 text-black">
+                    <tip.Icon size={16} />
                   </span>
                   <div>
                     <p className="text-sm font-semibold text-black leading-tight">{tip.title}</p>
-                    <p className="text-[13px] text-gray-600 leading-snug">{tip.text}</p>
+                    <p className="text-xs text-gray-600 leading-snug">{tip.text}</p>
                   </div>
                 </li>
               ))}
@@ -133,7 +135,7 @@ const CatGuide = () => {
             <button
               type="button"
               onClick={openPicker}
-              className="mt-5 w-full flex items-center justify-center gap-2 rounded-xl bg-black text-white text-sm font-medium py-2.5 hover:bg-black/85 transition-colors cursor-pointer"
+              className="shrink-0 mt-3 w-full flex items-center justify-center gap-2 rounded-xl bg-black text-white text-sm font-medium py-2.5 hover:bg-black/85 transition-colors cursor-pointer"
             >
               <Cat size={16} /> Choose your pet
             </button>
