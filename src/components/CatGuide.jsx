@@ -67,7 +67,7 @@ const CatGuide = () => {
       onClick={openGuide}
       aria-label="Meet the cat"
       title="Meet the cat"
-      className={`relative flex items-center justify-center p-1 rounded transition-colors cursor-pointer ${className}`}
+      className={`flex items-center justify-center p-1 rounded transition-colors cursor-pointer ${className}`}
     >
       <Cat size={18} className="text-black" />
       {!seen && (
@@ -82,9 +82,10 @@ const CatGuide = () => {
   return (
     <>
       {/* Desktop: lives in the navbar (its parent is hidden on mobile). */}
-      {renderTrigger("hover:bg-black/10")}
+      {renderTrigger("relative hover:bg-black/10")}
 
-      {/* Mobile: the navbar group is hidden, so float a reachable trigger. */}
+      {/* Mobile: the navbar group is hidden, so float a reachable trigger.
+          `fixed` (not `relative`) both pins it and anchors the dot. */}
       {createPortal(
         renderTrigger(
           "sm:hidden fixed top-2 right-3 z-[1500] bg-white/70 backdrop-blur-md shadow-md"
