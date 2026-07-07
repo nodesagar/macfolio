@@ -293,6 +293,7 @@ const WORK_LOCATION = {
       name: "ParseCal",
       icon: "/images/folder.png",
       kind: "folder",
+      hideFromDesktop: true,
       position: "top-10 left-56",
       windowPosition: "top-[5vh] left-5",
       children: [
@@ -336,7 +337,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-[28rem]",
-      windowPosition: "top-[18vh] left-5",
+      windowPosition: "top-[5vh] left-5",
       children: [
         {
           id: 1,
@@ -368,7 +369,7 @@ const WORK_LOCATION = {
       kind: "folder",
       category: "freelance",
       position: "top-10 left-[42rem]",
-      windowPosition: "top-[31vh] left-5",
+      windowPosition: "top-[18vh] left-5",
       children: [
         {
           id: 1,
@@ -408,6 +409,48 @@ const WORK_LOCATION = {
           fileType: "img",
           position: "top-44 left-56",
           imageUrl: "/images/ownurgrowth_home.png",
+        },
+      ],
+    },
+    // ▶ Project 5
+    {
+      id: 11,
+      name: "PostHeap",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-44 left-5",
+      windowPosition: "top-[31vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "PostHeap Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            [
+              "This project is a full stack Instagram saved-post organizer called ",
+              {
+                text: "PostHeap",
+                href: "https://postheap.vercel.app",
+              },
+              ".",
+            ],
+            "Core app: A Next.js 14 web dashboard where users log in (Supabase Auth), view saved posts, search/filter, tag/note/star items, and manage keyword-based categories.",
+            "Data layer: Supabase Postgres with RLS-first multi-user schema and migrations, plus Storage for caching thumbnails before Instagram CDN links expire.",
+            "Capture pipeline: A Chrome extension that listens to Instagram's internal saved-feed network responses (not brittle DOM scraping), normalizes posts, and sends authenticated batches to the app ingest API.",
+            "In short, it is a personal knowledge and curation system for Instagram saves, built around reliable browser-side capture + searchable structured storage.",
+          ],
+        },
+        {
+          id: 2,
+          name: "postheap",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://postheap.vercel.app",
+          position: "top-20 right-32",
         },
       ],
     },
