@@ -454,6 +454,47 @@ const WORK_LOCATION = {
         },
       ],
     },
+    // ▶ Project 6
+    {
+      id: 12,
+      name: "Eterna",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-44 left-56",
+      windowPosition: "top-[44vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "Eterna Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            [
+              {
+                text: "Eterna",
+                href: "https://geteterna.vercel.app/",
+              },
+              " is a private notebook for desktop Chrome: a little space for your everyday.",
+            ],
+            "It keeps notes, tasks, events, people, and a scratchpad in Chrome's side panel (Alt+Shift+N) and on the new tab page. No account needed; all data stays in the browser.",
+            "Writing: Markdown shortcuts, a slash menu, nested notes, pins, tags, and full-text search. Select text on any page and save it to Eterna with its source link from the right-click menu.",
+            "Tasks and events support due dates, natural-language dates (type \"friday\"), and reminder notifications. People get contacts with follow-up nudges.",
+            "Privacy-first: no cloud, ads, or analytics. Back up to a single .eterna file and restore it on another computer.",
+          ],
+        },
+        {
+          id: 2,
+          name: "eterna",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://geteterna.vercel.app/",
+          position: "top-20 right-32",
+        },
+      ],
+    },
   ],
 };
 
