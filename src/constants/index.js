@@ -336,6 +336,7 @@ const WORK_LOCATION = {
       name: "Intab",
       icon: "/images/folder.png",
       kind: "folder",
+      hideFromDesktop: true,
       position: "top-10 left-[28rem]",
       windowPosition: "top-[5vh] left-5",
       children: [
@@ -369,7 +370,7 @@ const WORK_LOCATION = {
       kind: "folder",
       category: "freelance",
       position: "top-10 left-[42rem]",
-      windowPosition: "top-[18vh] left-5",
+      windowPosition: "top-[5vh] left-5",
       children: [
         {
           id: 1,
@@ -419,7 +420,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-44 left-5",
-      windowPosition: "top-[31vh] left-5",
+      windowPosition: "top-[18vh] left-5",
       children: [
         {
           id: 1,
@@ -461,7 +462,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-44 left-56",
-      windowPosition: "top-[44vh] left-5",
+      windowPosition: "top-[31vh] left-5",
       children: [
         {
           id: 1,
