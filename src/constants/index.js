@@ -274,7 +274,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-36 left-40",
-          imageUrl: "/images/build3x_home.png",
+          imageUrl: "/images/build3x_home.webp",
         },
         // {
         //   id: 5,
@@ -409,7 +409,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-44 left-56",
-          imageUrl: "/images/ownurgrowth_home.png",
+          imageUrl: "/images/ownurgrowth_home.webp",
         },
       ],
     },
@@ -551,7 +551,7 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-40 left-[15rem]",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/me_badhraj_temple.jpg",
+      image: "/images/me_badhraj_temple.webp",
       description: [
         "Hey! I’m Sagar 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
         "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
