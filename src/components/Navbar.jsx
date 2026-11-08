@@ -2,7 +2,7 @@
 import dayjs from 'dayjs';
 
 import { navIcons, navLinks } from '#constants/index.js';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useWindowStore from '#store/window.js';
 import CatGuide from '#components/CatGuide.jsx';
 
@@ -11,7 +11,14 @@ import CatGuide from '#components/CatGuide.jsx';
 
 const Navbar = () => {
 
-    const { openWindow } = useWindowStore();
+    const openWindow = useWindowStore((s) => s.openWindow);
+    // Minute-precision string: state only changes (and re-renders) when the minute flips.
+    const [now, setNow] = useState(() => dayjs().format("YYYY-MM-DDTHH:mm"));
+
+    useEffect(() => {
+        const id = setInterval(() => setNow(dayjs().format("YYYY-MM-DDTHH:mm")), 1000);
+        return () => clearInterval(id);
+    }, []);
 
     return <nav>
 
@@ -47,7 +54,7 @@ const Navbar = () => {
 
             </ul>
 
-            <time datetime="">{dayjs().format("ddd MMM D h:mm A")}</time>
+            <time dateTime={now}>{dayjs(now).format("ddd MMM D h:mm A")}</time>
 
         </div>
     </nav>
