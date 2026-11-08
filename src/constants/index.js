@@ -348,7 +348,9 @@ const WORK_LOCATION = {
           fileType: "txt",
           position: "top-12 left-16",
           description: [
-            "Intab is a new project.",
+            "Intab is a high-performance, fully in-browser IDE powered by WebAssembly, built with team 4 Bytes.",
+            "It pairs a Monaco code editor with an xterm terminal, and compiles C/C++ (Emception) and runs Python (Pyodide, with matplotlib plots) entirely client-side.",
+            "Includes SQLite and Postgres (sql.js, PGlite) playgrounds, with files persisted locally via OPFS: no server, fully isolated.",
           ],
         },
         {
@@ -359,6 +361,15 @@ const WORK_LOCATION = {
           fileType: "url",
           href: "https://intab.vercel.app/",
           position: "top-20 right-32",
+        },
+        {
+          id: 3,
+          name: "intab.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-44 left-56",
+          imageUrl: "/images/intab_preview.webp",
         },
       ],
     },
