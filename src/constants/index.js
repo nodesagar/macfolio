@@ -135,24 +135,24 @@ const socials = [
   },
   {
     id: 2,
+    text: "LinkedIn",
+    icon: "/icons/linkedin.svg",
+    bg: "#0a66c2",
+    link: "https://www.linkedin.com/in/nodesagar",
+  },
+  {
+    id: 3,
     text: "Instagram",
     icon: "/icons/instagram.svg",
     bg: "linear-gradient(135deg, #f58529 0%, #dd2a7b 35%, #8134af 65%, #515bd4 100%)",
     link: "https://www.instagram.com/nodesagar/",
   },
   {
-    id: 3,
+    id: 4,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#000000",
     link: "https://x.com/nodesagar",
-  },
-  {
-    id: 4,
-    text: "LinkedIn",
-    icon: "/icons/linkedin.svg",
-    bg: "#0a66c2",
-    link: "https://www.linkedin.com/in/nodesagar",
   },
 ];
 

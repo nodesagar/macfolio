@@ -110,7 +110,7 @@
     try {
       const value = JSON.parse(localStorage.getItem(`oneko:${key}`));
       return typeof value === typeof fallback ? value : fallback;
-    } catch (e) {
+    } catch {
       return fallback;
     }
   }

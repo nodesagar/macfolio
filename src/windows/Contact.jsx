@@ -4,11 +4,6 @@ import windowWrapper from "../hoc/WindowWrapper.jsx";
 import { socials } from "#constants";
 
 const Contact = () => {
-  const socialOrder = ["Github", "LinkedIn", "Instagram", "Twitter/X"];
-  const orderedSocials = [...socials].sort(
-    (a, b) => socialOrder.indexOf(a.text) - socialOrder.indexOf(b.text)
-  );
-
   return (
     <>
       <div id="window-header">
@@ -32,7 +27,7 @@ const Contact = () => {
         <p className="email">conveytosagar@gmail.com</p>
 
         <ul className="social-grid">
-          {orderedSocials.map(({ id, bg, link, icon, text }) => (
+          {socials.map(({ id, bg, link, icon, text }) => (
             <li key={id} style={{ background: bg }} className="social-card">
               <a
                 href={link}
