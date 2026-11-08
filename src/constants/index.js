@@ -105,7 +105,7 @@ const techStack = [
   },
   {
     category: "Mobile",
-    items: ["AndriodStudio", "Kotlin", "Flutter", "Dart"],
+    items: ["Android Studio", "Kotlin", "Flutter", "Dart"],
   },
   {
     category: "Styling",
@@ -113,7 +113,7 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", " NestJS", "Hono"],
+    items: ["Node.js", "Express", "NestJS", "Hono"],
   },
   {
     category: "Database",
