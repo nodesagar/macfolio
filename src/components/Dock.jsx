@@ -8,7 +8,8 @@ import useWindowStore from '../store/window.js';
 
 const Dock = () => {
 
-    const { openWindow, closeWindow, windows } = useWindowStore();
+    const openWindow = useWindowStore((s) => s.openWindow);
+    const closeWindow = useWindowStore((s) => s.closeWindow);
     const dockRef = useRef(null);
 
     useGSAP(() => {
@@ -79,21 +80,18 @@ const Dock = () => {
 
         if (!app.canOpen) return;
 
-        const window = windows[app.id];
+        const win = useWindowStore.getState().windows[app.id];
 
-
-        if (!window) {
+        if (!win) {
             console.error(`No window config found for app: ${app.id}`);
             return;
         }
 
-        if (window.isOpen) {
+        if (win.isOpen) {
             closeWindow(app.id);
         } else {
             openWindow(app.id);
         }
-
-        console.log(windows);
     };
 
 

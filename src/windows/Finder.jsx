@@ -8,9 +8,10 @@ import clsx from "clsx";
 import useWindowStore from "#store/window.js";
 
 const Finder = () => {
-  const { openWindow } = useWindowStore();
+  const openWindow = useWindowStore((s) => s.openWindow);
 
-  const { activeLocation, setActiveLocation } = useLocationStore();
+  const activeLocation = useLocationStore((s) => s.activeLocation);
+  const setActiveLocation = useLocationStore((s) => s.setActiveLocation);
 
   const getParentLocation = (location) => {
     if (!location) return null;

@@ -6,12 +6,11 @@ import { Draggable } from "gsap/Draggable";
 import useWindowStore from "#store/window";
 import useLocationStore from "../store/location.js";
 
+const projects = (locations.work.children ?? []).filter((p) => !p.hideFromDesktop);
+
 const Home = () => {
-    const projects = (locations.work.children ?? []).filter((p) => !p.hideFromDesktop);
-
-
-    const { setActiveLocation } = useLocationStore();
-    const { openWindow } = useWindowStore();
+    const setActiveLocation = useLocationStore((s) => s.setActiveLocation);
+    const openWindow = useWindowStore((s) => s.openWindow);
 
     const handleOpenProjectFinder = (project) => {
         setActiveLocation(project);
@@ -23,7 +22,7 @@ const Home = () => {
         if (window.matchMedia('(min-width: 640px)').matches) {
             Draggable.create(".folder");
         }
-    }, [projects]);
+    }, []);
 
     return (
         <section id="home">

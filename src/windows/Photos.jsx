@@ -6,7 +6,7 @@ import { photosLinks, gallery } from "#constants";
 import { Search, Mail } from "lucide-react";
 
 const Photos = () => {
-  const { openWindow } = useWindowStore();
+  const openWindow = useWindowStore((s) => s.openWindow);
   const libraryAlbum = photosLinks.find(({ album }) => album === "library") ?? photosLinks[0];
   const libraryPhotos = gallery.filter(({ albums }) => albums.includes("library"));
 

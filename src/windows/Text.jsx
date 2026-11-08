@@ -4,10 +4,7 @@ import windowWrapper from "../hoc/WindowWrapper.jsx";
 import useWindowStore from "#store/window.js";
 
 const Text = () => {
-    // const { data } = useWindowStore((s) => s.windows.txtfile);
-
-    const { windows } = useWindowStore();
-    const data = windows.txtfile?.data;
+    const data = useWindowStore((s) => s.windows.txtfile?.data);
 
     if (!data) return null;
 

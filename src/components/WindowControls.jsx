@@ -3,7 +3,7 @@ import useWindowStore from '../store/window.js';
 
 const WindowControls = ({ target }) => {
 
-  const { closeWindow } = useWindowStore();
+  const closeWindow = useWindowStore((s) => s.closeWindow);
 
   return (
     <div id="window-controls">

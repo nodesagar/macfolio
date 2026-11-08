@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import useWindowStore from '../store/window.js';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -10,8 +10,9 @@ const windowWrapper = (Component, windowKey) => {
 
     const Wrapped = (props) => {
 
-        const { focusWindow, windows } = useWindowStore();
-        const { isOpen, zIndex } = windows[windowKey];
+        const isOpen = useWindowStore((s) => s.windows[windowKey].isOpen);
+        const zIndex = useWindowStore((s) => s.windows[windowKey].zIndex);
+        const focusWindow = useWindowStore((s) => s.focusWindow);
         const ref = useRef(null);
 
 
@@ -53,11 +54,6 @@ const windowWrapper = (Component, windowKey) => {
 
 
 
-        useLayoutEffect(() => {
-            const el = ref.current;
-            if (!el) return;
-            el.style.display = isOpen ? "block" : "none";
-        }, [isOpen]);
 
 
         if (!isOpen) return null;

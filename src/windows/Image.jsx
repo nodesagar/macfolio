@@ -4,8 +4,7 @@ import windowWrapper from "../hoc/WindowWrapper.jsx";
 import useWindowStore from "#store/window.js";
 
 const Image = () => {
-    const { windows } = useWindowStore();
-    const data = windows.imgfile?.data;
+    const data = useWindowStore((s) => s.windows.imgfile?.data);
 
     if (!data) return null;
 
