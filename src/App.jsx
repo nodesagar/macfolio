@@ -1,36 +1,33 @@
-
-import gsap from 'gsap';
-import { Draggable } from 'gsap/Draggable';
-
-
+import { lazy, Suspense } from 'react'
 import { Navbar, Welcome, Dock, Home } from '#components'
-import React from 'react'
-import { Terminal, Safari, Resume, Finder, Text, Image, Contact, Photos } from '#windows/index.js';
+import { Terminal, Safari, Finder, Text, Image, Contact, Photos } from '#windows/index.js';
+import useWindowStore from '#store/window.js';
 
-gsap.registerPlugin(Draggable);
+// Lazy + only rendered while open, so react-pdf/pdfjs download on first open, not page load.
+const Resume = lazy(() => import('#windows/Resume.jsx'));
 
 const App = () => {
+  const resumeOpen = useWindowStore((s) => s.windows.resume.isOpen);
+
   return (
     <main>
       <Navbar />
       <Welcome />
       <Dock />
 
-
       <Terminal />
-
       <Safari />
-      <Resume />
-
+      {resumeOpen && (
+        <Suspense fallback={null}>
+          <Resume />
+        </Suspense>
+      )}
       <Finder />
       <Text />
       <Image />
       <Contact />
       <Home />
-      <Photos/>
-
-
-
+      <Photos />
     </main>
   )
 }
