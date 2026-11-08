@@ -236,6 +236,232 @@ const WORK_LOCATION = {
   children: [
     // ▶ Project 1
     {
+      id: 10,
+      name: "ownURgrowth",
+      icon: "/images/folder.png",
+      kind: "folder",
+      category: "freelance",
+      position: "top-10 left-5",
+      windowPosition: "top-[5vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "ownURgrowth Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            "ownURgrowth is an online learning platform focused on LinkedIn personal branding and professional growth, offering paid video courses, a curated Prompt Vault, ghostwriting and brand-partnership services, and live Q&A sessions.",
+            [
+              "I built this as a freelance engagement for ",
+              {
+                text: "Ashwini Harle",
+                href: "https://www.linkedin.com/in/ashwini-harle",
+              },
+              " — SDE 2 at Amazon and a Top 1% career coach on Topmate — who founded ownURgrowth to help people grow their careers and personal brand.",
+            ],
+            "I led the full migration of the platform from Firebase to Supabase, re-architecting authentication, course access, and payment history on PostgreSQL while keeping the live product running.",
+            "My work centered on security and reliability: hardening auth-sensitive API flows, securing course video embeds, building branded Google sign-in via GIS id-token + nonce, gating admin endpoints, refining checkout and receipt emails, and optimizing performance for smooth scrolling.",
+          ],
+        },
+        {
+          id: 2,
+          name: "ownurgrowth",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://ownurgrowth.com",
+          position: "top-20 right-32",
+        },
+        {
+          id: 3,
+          name: "ownurgrowth.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-44 left-56",
+          imageUrl: "/images/ownurgrowth_home.webp",
+        },
+      ],
+    },
+    // ▶ Project 2
+    {
+      id: 11,
+      name: "PostHeap",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 left-56",
+      windowPosition: "top-[18vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "PostHeap Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            [
+              "This project is a full stack Instagram saved-post organizer called ",
+              {
+                text: "PostHeap",
+                href: "https://postheap.vercel.app",
+              },
+              ".",
+            ],
+            "Core app: A Next.js 14 web dashboard where users log in (Supabase Auth), view saved posts, search/filter, tag/note/star items, and manage keyword-based categories.",
+            "Data layer: Supabase Postgres with RLS-first multi-user schema and migrations, plus Storage for caching thumbnails before Instagram CDN links expire.",
+            "Capture pipeline: A Chrome extension that listens to Instagram's internal saved-feed network responses (not brittle DOM scraping), normalizes posts, and sends authenticated batches to the app ingest API.",
+            "In short, it is a personal knowledge and curation system for Instagram saves, built around reliable browser-side capture + searchable structured storage.",
+          ],
+        },
+        {
+          id: 2,
+          name: "postheap",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://postheap.vercel.app",
+          position: "top-20 right-32",
+        },
+      ],
+    },
+    // ▶ Project 3
+    {
+      id: 12,
+      name: "Eterna",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 left-[28rem]",
+      windowPosition: "top-[31vh] left-5",
+      children: [
+        {
+          id: 1,
+          name: "Eterna Project.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-12 left-16",
+          description: [
+            [
+              {
+                text: "Eterna",
+                href: "https://geteterna.vercel.app/",
+              },
+              " is a private notebook for desktop Chrome: a little space for your everyday.",
+            ],
+            "It keeps notes, tasks, events, people, and a scratchpad in Chrome's side panel (Alt+Shift+N) and on the new tab page. No account needed; all data stays in the browser.",
+            "Writing: Markdown shortcuts, a slash menu, nested notes, pins, tags, and full-text search. Select text on any page and save it to Eterna with its source link from the right-click menu.",
+            "Tasks and events support due dates, natural-language dates (type \"friday\"), and reminder notifications. People get contacts with follow-up nudges.",
+            "Privacy-first: no cloud, ads, or analytics. Back up to a single .eterna file and restore it on another computer.",
+          ],
+        },
+        {
+          id: 2,
+          name: "eterna",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://geteterna.vercel.app/",
+          position: "top-20 right-32",
+        },
+      ],
+    },
+  ],
+};
+
+// Sidebar groupings derived from the Work folder's projects.
+const myProjects = WORK_LOCATION.children.filter(
+  (p) => p.category !== "freelance",
+);
+const freelanceProjects = WORK_LOCATION.children.filter(
+  (p) => p.category === "freelance",
+);
+
+export { myProjects, freelanceProjects };
+
+const ABOUT_LOCATION = {
+  id: 2,
+  type: "about",
+  name: "About me",
+  icon: "/icons/info.svg",
+  kind: "folder",
+  children: [
+    {
+      id: 1,
+      name: "me.png",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-10",
+      imageUrl: "/images/me_2.jpg",
+    },
+    {
+      id: 2,
+      name: "casual-me.png",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-[15rem]",
+      imageUrl: "/images/landour_sagar_md.JPG",
+    },
+    {
+      id: 3,
+      name: "conference-me.png",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-40 left-10",
+      imageUrl: "/images/apple_visit.jpeg",
+    },
+    {
+      id: 4,
+      name: "about-me.txt",
+      icon: "/images/txt.png",
+      kind: "file",
+      fileType: "txt",
+      position: "top-40 left-[15rem]",
+      subtitle: "Meet the Developer Behind the Code",
+      image: "/images/me_badhraj_temple.webp",
+      description: [
+        "Hey! I’m Sagar 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
+        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
+        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
+        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+      ],
+    },
+  ],
+};
+
+const RESUME_LOCATION = {
+  id: 3,
+  type: "resume",
+  name: "Resume",
+  icon: "/icons/file.svg",
+  kind: "folder",
+  children: [
+    {
+      id: 1,
+      name: "Resume.pdf",
+      icon: "/images/pdf.png",
+      kind: "file",
+      fileType: "pdf",
+      // you can add `href` if you want to open a hosted resume
+      // href: "/your/resume/path.pdf",
+    },
+  ],
+};
+
+const TRASH_LOCATION = {
+  id: 4,
+  type: "trash",
+  name: "Trash",
+  icon: "/icons/trash.svg",
+  kind: "folder",
+  children: [
+    // ▶ Project 1
+    {
       id: 5,
       name: "Build3X Cohort Website",
       icon: "/images/folder.png",
@@ -373,232 +599,6 @@ const WORK_LOCATION = {
         },
       ],
     },
-    // ▶ Project 4
-    {
-      id: 10,
-      name: "ownURgrowth",
-      icon: "/images/folder.png",
-      kind: "folder",
-      category: "freelance",
-      position: "top-10 left-[42rem]",
-      windowPosition: "top-[5vh] left-5",
-      children: [
-        {
-          id: 1,
-          name: "ownURgrowth Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-12 left-16",
-          description: [
-            "ownURgrowth is an online learning platform focused on LinkedIn personal branding and professional growth, offering paid video courses, a curated Prompt Vault, ghostwriting and brand-partnership services, and live Q&A sessions.",
-            [
-              "I built this as a freelance engagement for ",
-              {
-                text: "Ashwini Harle",
-                href: "https://www.linkedin.com/in/ashwini-harle",
-              },
-              " — SDE 2 at Amazon and a Top 1% career coach on Topmate — who founded ownURgrowth to help people grow their careers and personal brand.",
-            ],
-            "I led the full migration of the platform from Firebase to Supabase, re-architecting authentication, course access, and payment history on PostgreSQL while keeping the live product running.",
-            "My work centered on security and reliability: hardening auth-sensitive API flows, securing course video embeds, building branded Google sign-in via GIS id-token + nonce, gating admin endpoints, refining checkout and receipt emails, and optimizing performance for smooth scrolling.",
-          ],
-        },
-        {
-          id: 2,
-          name: "ownurgrowth",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://ownurgrowth.com",
-          position: "top-20 right-32",
-        },
-        {
-          id: 3,
-          name: "ownurgrowth.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-44 left-56",
-          imageUrl: "/images/ownurgrowth_home.webp",
-        },
-      ],
-    },
-    // ▶ Project 5
-    {
-      id: 11,
-      name: "PostHeap",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-44 left-5",
-      windowPosition: "top-[18vh] left-5",
-      children: [
-        {
-          id: 1,
-          name: "PostHeap Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-12 left-16",
-          description: [
-            [
-              "This project is a full stack Instagram saved-post organizer called ",
-              {
-                text: "PostHeap",
-                href: "https://postheap.vercel.app",
-              },
-              ".",
-            ],
-            "Core app: A Next.js 14 web dashboard where users log in (Supabase Auth), view saved posts, search/filter, tag/note/star items, and manage keyword-based categories.",
-            "Data layer: Supabase Postgres with RLS-first multi-user schema and migrations, plus Storage for caching thumbnails before Instagram CDN links expire.",
-            "Capture pipeline: A Chrome extension that listens to Instagram's internal saved-feed network responses (not brittle DOM scraping), normalizes posts, and sends authenticated batches to the app ingest API.",
-            "In short, it is a personal knowledge and curation system for Instagram saves, built around reliable browser-side capture + searchable structured storage.",
-          ],
-        },
-        {
-          id: 2,
-          name: "postheap",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://postheap.vercel.app",
-          position: "top-20 right-32",
-        },
-      ],
-    },
-    // ▶ Project 6
-    {
-      id: 12,
-      name: "Eterna",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-44 left-56",
-      windowPosition: "top-[31vh] left-5",
-      children: [
-        {
-          id: 1,
-          name: "Eterna Project.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-12 left-16",
-          description: [
-            [
-              {
-                text: "Eterna",
-                href: "https://geteterna.vercel.app/",
-              },
-              " is a private notebook for desktop Chrome: a little space for your everyday.",
-            ],
-            "It keeps notes, tasks, events, people, and a scratchpad in Chrome's side panel (Alt+Shift+N) and on the new tab page. No account needed; all data stays in the browser.",
-            "Writing: Markdown shortcuts, a slash menu, nested notes, pins, tags, and full-text search. Select text on any page and save it to Eterna with its source link from the right-click menu.",
-            "Tasks and events support due dates, natural-language dates (type \"friday\"), and reminder notifications. People get contacts with follow-up nudges.",
-            "Privacy-first: no cloud, ads, or analytics. Back up to a single .eterna file and restore it on another computer.",
-          ],
-        },
-        {
-          id: 2,
-          name: "eterna",
-          icon: "/images/safari.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://geteterna.vercel.app/",
-          position: "top-20 right-32",
-        },
-      ],
-    },
-  ],
-};
-
-// Sidebar groupings derived from the Work folder's projects.
-const myProjects = WORK_LOCATION.children.filter(
-  (p) => p.category !== "freelance",
-);
-const freelanceProjects = WORK_LOCATION.children.filter(
-  (p) => p.category === "freelance",
-);
-
-export { myProjects, freelanceProjects };
-
-const ABOUT_LOCATION = {
-  id: 2,
-  type: "about",
-  name: "About me",
-  icon: "/icons/info.svg",
-  kind: "folder",
-  children: [
-    {
-      id: 1,
-      name: "me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-10",
-      imageUrl: "/images/me_2.jpg",
-    },
-    {
-      id: 2,
-      name: "casual-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-[15rem]",
-      imageUrl: "/images/landour_sagar_md.JPG",
-    },
-    {
-      id: 3,
-      name: "conference-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-40 left-10",
-      imageUrl: "/images/apple_visit.jpeg",
-    },
-    {
-      id: 4,
-      name: "about-me.txt",
-      icon: "/images/txt.png",
-      kind: "file",
-      fileType: "txt",
-      position: "top-40 left-[15rem]",
-      subtitle: "Meet the Developer Behind the Code",
-      image: "/images/me_badhraj_temple.webp",
-      description: [
-        "Hey! I’m Sagar 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
-      ],
-    },
-  ],
-};
-
-const RESUME_LOCATION = {
-  id: 3,
-  type: "resume",
-  name: "Resume",
-  icon: "/icons/file.svg",
-  kind: "folder",
-  children: [
-    {
-      id: 1,
-      name: "Resume.pdf",
-      icon: "/images/pdf.png",
-      kind: "file",
-      fileType: "pdf",
-      // you can add `href` if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
-    },
-  ],
-};
-
-const TRASH_LOCATION = {
-  id: 4,
-  type: "trash",
-  name: "Trash",
-  icon: "/icons/trash.svg",
-  kind: "folder",
-  children: [
   ],
 };
 
