@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/Draggable";
 import useWindowStore from "#store/window";
 import useLocationStore from "../store/location.js";
+import { pressable } from "../utils/pressable.js";
 
 const projects = (locations.work.children ?? []).filter((p) => !p.hideFromDesktop);
 
@@ -31,7 +32,7 @@ const Home = () => {
                     <li
                         key={project.id}
                         className={clsx("group folder", project.windowPosition)}
-                        onClick={() => handleOpenProjectFinder(project)}
+                        {...pressable(() => handleOpenProjectFinder(project))}
                     >
                         <img src="/images/folder.png" alt={project.name} />
                         <p>{project.name}</p>

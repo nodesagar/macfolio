@@ -6,6 +6,7 @@ import { locations, myProjects, freelanceProjects } from "#constants";
 import useLocationStore from "../store/location.js";
 import clsx from "clsx";
 import useWindowStore from "#store/window.js";
+import { pressable } from "../utils/pressable.js";
 
 const Finder = () => {
   const openWindow = useWindowStore((s) => s.openWindow);
@@ -45,7 +46,7 @@ const Finder = () => {
         {items.map((item) => (
           <li
             key={item.id}
-            onClick={() => setActiveLocation(item)}
+            {...pressable(() => setActiveLocation(item))}
             className={clsx(
               item.id === activeLocation.id ? "active" : "not-active",
             )}
@@ -113,7 +114,7 @@ const Finder = () => {
                 <li
                   key={item.id}
                   className={item.position}
-                  onClick={(e) => { e.stopPropagation(); openItem(item); }}
+                  {...pressable((e) => { e.stopPropagation(); openItem(item); })}
                 >
                   <img src={item.icon} alt={item.name} />
                   <p>{item.name}</p>
